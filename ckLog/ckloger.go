@@ -1,11 +1,11 @@
 package ckLog
 
 import (
-	"day05/utils"
 	"fmt"
 	"os"
 	path2 "path"
 	"time"
+	"utilsLog/utils"
 )
 
 type LogFileLogger struct {
@@ -16,7 +16,7 @@ type LogFileLogger struct {
 	fileerror *os.File
 	maxSize   int64
 }
-type Logger interface{
+type Logger interface {
 	Debug(level Level, fomart string, args ...interface{})
 	Info(level Level, fomart string, args ...interface{})
 	Warning(level Level, fomart string, args ...interface{})
@@ -101,7 +101,6 @@ func (l *LogFileLogger) splitLogFile(files *os.File) *os.File {
 	return fileobj
 }
 
-
 func (l *LogFileLogger) Debug(level Level, fomart string, args ...interface{}) {
 	l.log(level, fomart, args...)
 }
@@ -114,7 +113,7 @@ func (l *LogFileLogger) Warning(level Level, fomart string, args ...interface{})
 func (l *LogFileLogger) Fatal(level Level, fomart string, args ...interface{}) {
 	l.log(level, fomart, args...)
 }
-func(l *LogFileLogger)Close(){
+func (l *LogFileLogger) Close() {
 	l.file.Close()
 	l.fileerror.Close()
 }

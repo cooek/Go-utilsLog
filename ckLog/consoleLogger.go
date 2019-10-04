@@ -1,10 +1,10 @@
 package ckLog
 
 import (
-	"day05/utils"
 	"fmt"
 	"os"
 	"time"
+	"utilsLog/utils"
 )
 
 type ConsloeLogger struct {

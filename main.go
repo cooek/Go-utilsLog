@@ -1,6 +1,6 @@
 package main
 
-import "day05/ckLog"
+import "utilsLog/ckLog"
 
 func main() {
 
