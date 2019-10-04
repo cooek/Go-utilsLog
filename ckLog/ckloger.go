@@ -36,6 +36,7 @@ func LogNewFileLogger(filePath, fileName string) *LogFileLogger {
 	return Logobj
 }
 func (l *LogFileLogger) init() {
+
 	//path := fmt.Sprintf("%s%s", l.fileName, l.filePath)
 	path := path2.Join(l.filePath, l.fileName+".log")
 	fileobj, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
